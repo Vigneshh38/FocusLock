@@ -9,9 +9,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-/** pickMode = true: checkboxes (add apps). false: "Unblock" buttons (blocked list). */
 class AppAdapter(
     private val pickMode: Boolean,
+    private val subtitle: (AppInfo) -> String = { it.pkg },
     private val onRemove: (AppInfo) -> Unit = {}
 ) : RecyclerView.Adapter<AppAdapter.VH>() {
 
@@ -37,7 +37,7 @@ class AppAdapter(
         val app = items[position]
         h.icon.setImageDrawable(app.icon)
         h.label.text = app.label
-        h.pkg.text = app.pkg
+        h.pkg.text = subtitle(app)
 
         if (pickMode) {
             h.remove.visibility = View.GONE

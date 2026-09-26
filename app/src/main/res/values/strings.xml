@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">FocusLock</string>
     <string name="service_label">FocusLock blocker</string>
-    <string name="accessibility_description">Detects when a blocked app opens and immediately turns off the screen. FocusLock does not read screen content.</string>
+    <string name="accessibility_description">Turns off the screen when a blocked app opens, and stops FocusLock from being uninstalled or switched off without your password. It only checks Settings, installer and launcher screens for FocusLock.</string>
 </resources>
